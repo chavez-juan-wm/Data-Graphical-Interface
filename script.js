@@ -1,27 +1,32 @@
 google.load('visualization', '1', {packages: ['corechart', 'bar']});
 google.setOnLoadCallback(drawBasic);
 
-function drawBasic() {
+function drawBasic()
+{
 
-    var data = google.visualization.arrayToDataTable([
-        ['School Name in AZ', '2010 Population',],
-        ['Crittenton Youth Academy', 8175000],
-        ['San Carlos High School', 3792000],
-        ['La Puerta High School', 2695000],
-        ['Peach Springs School', 2099000],
-        ['Trusty Elemantary School', 1526000]
+    var data = google.visualization.arrayToDataTable
+    ([
+        ['School Name in AZ', 'Money Received', { role: 'style' }],
+        ['Crittenton Youth Academy', 915959, 'color: gold'],
+        ['San Carlos High School', 928654, 'color: silver'],
+        ['La Puerta High School', 634503, 'color: red'],
+        ['Peach Springs School', 880050, 'color: blue'],
+        ['Rice Elementary School', 204246, 'color: green']
     ]);
 
-    var options = {
-        title: 'Population of Largest U.S. Cities',
+    var options =
+    {
+        title: 'Money Schools Received in Arizona',
         chartArea: {width: '50%'},
         hAxis: {
-            title: 'Total Population',
+            title: 'Money Received',
             minValue: 0
         },
-        vAxis: {
-            title: 'City'
-        }
+        vAxis:
+        {
+            title: 'School Name in AZ'
+        },
+        backgroundColor: 'gray'
     };
 
     var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
